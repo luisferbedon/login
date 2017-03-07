@@ -1,0 +1,30 @@
+extends ../templates/default
+
+block content
+	div(class='row')
+		div(class='col-md-6 col-md-offset-3')
+			if message.length > 0
+					div(class='alert alert-success	' role='alert')= message
+			div(class='panel panel-default')
+				div(class='panel-heading')= 'Registrarme'
+				div(class='panel-body')
+					form(action='http://localhost:3000/auth/signup' method='post' autocomplete='off')
+						div(class='form-group')
+						label(for="email")= 'Email'
+						input(type='email' name='email' id='email' placeholder='Email' class='form-control')
+						div(class='form-group')
+						label(for="nombre")= 'Nombre'
+						input(type='text' name='nombre' id='nombre' placeholder='Nombre' class='form-control')
+						div(class='form-group')
+						label(for="tipo")= 'Tipo de Usuario'
+						input(type='number' name='tipo' id='tipo' placeholder='Tipo de usuario y acceso' class='form-control')
+						div(class='form-group')
+						label(for="grupo")= 'Grupo al que pertenece'
+						input(type='number' name='grupo' id='grupo' placeholder='grupo' class='form-control')
+						div(class='form-group')
+						label(for="password")= 'Password'
+						input(type='password' name='password' id='password' placeholder='Password' class='form-control')
+						button(type="submit" class='btn btn-default')= 'Registrarme'
+				
+				if fail_msg.length > 0
+					div(class='alert alert-danger' role='alert')= fail_msg

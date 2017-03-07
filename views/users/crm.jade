@@ -1,0 +1,78 @@
+extends ../templates/default
+
+block content
+	link(rel="stylesheet", href="/stylesheets/crm.css")
+	link(rel="stylesheet", href="http://www.w3schools.com/lib/w3.css")
+	h3= 'Hola ,'+user.nombre+' solo arrastra los requerimientos a su correspondiente etapa'
+	div(class='row')
+		div(class="col col-md-3 alert alert-info" align='center' )
+			h4='Peticiones Entrantes'
+		div(class="col col-md-3 alert alert-warning" align='center' )
+			h4='Peticiones en Proceso'
+		div(class="col col-md-3 alert alert-success" align='center' )
+			h4='Peticiones Exitosas'
+		div(class="col col-md-3 alert alert-danger" align='center' )
+			h4='Peticiones Fallidas'
+		
+		div(id='col1' )
+		div(id='col2' )
+		div( id='col3' )
+		div(id='col4' )
+		
+	div(id = 'dialog-form' style='background:#FFF; border:1px solid #CCC;')
+		form(action='#' method='GET')
+			div()
+				h6= "Nombre"
+				input(type='text' id='name' name='name' readonly="readonly")
+			div()
+				h6= "Edad"
+				input(type='text' id='age' readonly="readonly")
+			div()
+				
+				h6= "Correo"
+				input(type='text' id='email' readonly="readonly")
+			div()
+				h6= "Teléfono"
+				input(type='text' id='phone' readonly="readonly")
+			div()
+				h6= "Ciudad"
+				input(type='text' id='city' readonly="readonly")
+			div()
+				h6= "Curso"
+				input(type='text' id='subject' readonly="readonly")
+			div()
+				h6= "Fecha de Inicio"
+				input(type='text' id='start' readonly="readonly")
+			div()
+				h6= "Fecha de Ingreso"
+				input(type='text' id='ingress' readonly="readonly")
+			div()
+				h6= "Próxima Fecha"
+				input(type='date' id='next-date' )
+			div()
+				h6= "Forma de contacto"
+				input(type='text' id='mode' )
+			div()
+				h6= "Nota"
+				input(type='text' id='note' )
+	div(id = "dialog-form2" style="background:#FFF; border:1px solid #CCC;")
+		form()
+			div()
+				label(for='accept-name')= Nombre
+				input(type='text' id='accept-name' readonly="readonly" )
+			div()
+				label(for='accept-note')= Comentarios_de_venta
+				input(type='text' id='accept-note' )
+				
+	div(id = "dialog-form3" style="background:#FFF; border:1px solid #CCC;")
+		form(action='#')
+			div()
+				label(for='reject-name')= Nombre
+				input(type='text' id='reject-name' readonly="readonly" )
+			div()
+				label(for='accept-note')= Razón_del_rechazo
+				input(type='text' id='reject-note' )
+	
+	script(src="https://code.jquery.com/jquery-1.12.4.js")
+	script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+	script(src="/javascripts/crm.js")

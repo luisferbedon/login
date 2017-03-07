@@ -1,0 +1,10 @@
+extends ../templates/default
+
+block content
+    h3= 'Hola ' + user.id + ',   estos son los indicadores de gestión'
+    div(class='row')
+    link(rel="stylesheet", href="/stylesheets/mapa.css")
+    link(rel="stylesheet", href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css")
+    script(src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js")
+    script(src="/javascripts/mapa.js")
+    script(src="https://code.jquery.com/jquery-2.2.3.min.js")  
